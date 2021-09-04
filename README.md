@@ -1,8 +1,29 @@
-## Demo source code 
+## Demo code
 
-this repo has demo source code and snippets for the blog post I wrote on [NestJS, TypeORM and PostgreSQL — full example development and project setup working with database migrations.](
-https://medium.com/@gausmann.simon/nestjs-typeorm-and-postgresql-full-example-development-and-project-setup-working-with-database-c1a2b1b11b8f)
+Run: 
+```sh
+npm i
 
-If you havee questions please open a issue. 
+npm run start:dev:db
 
-thanks, cheers 🍻 
+npm run typeorm:migration:run
+
+npm run start:dev:db:seed
+
+npm run start:dev
+```
+
+then to read
+```sh
+curl --location --request GET 'http://localhost:3000/item'
+```
+
+or to write 
+```sh
+curl --location --request POST 'http://localhost:3000/item' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+        "name": "ItemDTO",
+        "description": "Some Test Item"
+    }'
+```
